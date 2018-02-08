@@ -1,0 +1,10 @@
+.container
+  %h1 People
+  %table#person.display{data: {source: people_url(format: 'json')}}
+    %thead
+      %tr
+        %th Name
+        %th Date Of Birth
+        %th Phone Number
+    %tbody
+    	

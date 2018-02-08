@@ -1,0 +1,24 @@
+.container
+  %nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    %a.navbar-brand{:href => "#"} People-Database
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item.active
+          %a.nav-link{:href => people_path}
+            Home
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => addresses_path} Addresses
+        %li.nav-item
+          %a.nav-link.disabled{:href => profiles_path} Profiles
+        %li.nav-item
+          %a.nav-link.disabled{:href => vehicles_path} Vehicles
+    - if current_user
+      %ul.nav.navbar-nav.navbar-right#nav-ul
+        %li.nav-item.navbar-right
+          Signed in as
+          = succeed "!" do
+            %strong= current_user.name
+          = link_to "Sign out", destroy_user_session_path, method: :delete, id: "sign_out"

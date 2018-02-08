@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @person.name
+%p
+  %strong Date of birth:
+  = @person.date_of_birth
+%p
+  %strong Date of birth:
+  = @person.phone_number
+%p
+  %strong Status:
+  = @person.active ? 'Enabled' : 'Disabled'
+= link_to 'Edit', edit_person_path(@person)
+|
+= link_to 'Back', people_path

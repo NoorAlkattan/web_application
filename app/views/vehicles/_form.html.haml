@@ -1,0 +1,17 @@
+= form_with(model: vehicle, local: true) do |form|
+  - if vehicle.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(vehicle.errors.count, "error")
+        prohibited this vehicle from being saved:
+      %ul
+        - vehicle.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :car_type
+    = form.text_field :car_type, id: :vehicle_car_type
+  .field
+    = form.label :color
+    = form.text_field :color, id: :vehicle_color
+  .actions
+    = form.submit

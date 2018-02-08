@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Gender:
+  = @profile.gender
+%p
+  %strong Email address:
+  = @profile.email_address
+%p
+  %strong Gender:
+  = @profile.gender
+= link_to 'Edit', edit_profile_path(@profile)
+|
+= link_to 'Back', profiles_path

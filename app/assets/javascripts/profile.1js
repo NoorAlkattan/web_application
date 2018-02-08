@@ -1,0 +1,17 @@
+	$(document).on('turbolinks:load', function (e) {
+   $.ajaxSetup({
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+    });
+	   elems = $('input[type=checkbox][data-toggle^=toggle]')
+	  elems.bootstrapToggle()
+	  $('.profile_check').change(function(e) {
+	    $.ajax({
+	     url: 'profiles/' + this.id + '/change_status/',
+	    type: 'post'
+		 })
+	 });
+	 });
+
+
+
+
