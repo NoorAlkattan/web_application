@@ -8,9 +8,6 @@
         - profile.errors.full_messages.each do |message|
           %li= message
   .field
-    = form.label :phone_number
-    = form.text_field :phone_number, id: :profile_phone_number
-  .field
     = form.label :email_address
     = form.text_field :email_address, id: :profile_email_address
   .field

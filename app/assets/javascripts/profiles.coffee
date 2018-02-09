@@ -9,7 +9,10 @@ $(document).on 'turbolinks:load', (e) ->
   elems.bootstrapToggle()
   $('.profile_check').change (e) ->
     $.ajax
-      url: 'profiles/' + @id + '/change_status/'
-      type: 'post'
+      url: 'profiles/' + @id + '/change_status/',
+      type: 'post',
+      success: (data,textStatus,xhr) ->
+        $('#notice').html(data.message)
+ 
     return
   return

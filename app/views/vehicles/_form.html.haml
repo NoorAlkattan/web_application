@@ -6,12 +6,14 @@
         prohibited this vehicle from being saved:
       %ul
         - vehicle.errors.full_messages.each do |message|
-          %li= message
+          %li
+            = message
   .field
     = form.label :car_type
-    = form.text_field :car_type, id: :vehicle_car_type
+    = form.select :car_type, ['BMW', 'Ford', 'Ferari', 'Chevy', 'Honda', 'Toyota'], {}, id: :vehicle_car_type
   .field
     = form.label :color
-    = form.text_field :color, id: :vehicle_color
+    = form.select :color, ['Red', 'Blue', 'Black', 'Yellow', 'Grey', 'Green', 'White'], {}, id: :vehicle_color
   .actions
     = form.submit
+

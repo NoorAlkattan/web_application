@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
+//= require select2
 //= require datatables/jquery_datatables
 //= require bootstrap-toggle
-//= require turbolinks-compatibility
 //= require_tree .

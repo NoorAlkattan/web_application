@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'devise'
 gem 'bootstrap-toggle-rails'
 gem 'jquery-turbolinks'
+gem "select2-rails"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

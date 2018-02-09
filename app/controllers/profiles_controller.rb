@@ -24,14 +24,11 @@ class ProfilesController < ApplicationController
   def change_status
     profile = Profile.find( params[:id])
     profile.active = !profile.active
-    if profile.save
-      flash[:notice] = "#{profile.gender} has been #{profile.active ? 'activated' : 'deactivated'}"
-    else
-      flash[:error]= profile.errors.full_messages.to_sentence
-    end
-    respond_to do |format|
-      format.js {head :ok}
-    end
+      if profile.save
+        render json: {message: "#{profile.person.name} has been #{profile.active ? 'activated' : 'deactivated'}"}
+      else
+        flash[:error]= profile.errors.full_messages.to_sentence
+      end
   end
 
   # POST /profiles
