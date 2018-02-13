@@ -1,13 +1,13 @@
-%p#notice= notice
-%p
-  %strong Street:
-  = @address.street
-%p
-  %strong City:
-  = @address.city
-%p
-  %strong Zipcode:
-  = @address.zipcode
-= link_to 'Edit', edit_address_path(@address)
-|
-= link_to 'Back', addresses_path
+.container
+  %p#notice= notice
+  %p
+    %strong Street:
+    = @address.street
+  %p
+    %strong City:
+    = @address.city
+  %p
+    %strong Zipcode:
+    = @address.zipcode
+  = link_to 'Edit', edit_address_path(@address), {class: 'btn btn-secondary btn-sm'}
+  = link_to 'Back', addresses_path, {class: 'btn btn-primary btn-sm'}

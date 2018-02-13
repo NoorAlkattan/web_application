@@ -1,3 +1,4 @@
-%h1 New Person
-= render 'form', person: @person
-= link_to 'Back', people_path
+.container
+  %h3 New Person
+  = render 'form', person: @person
+  = link_to 'Back', people_path, {class: 'btn btn-primary btn-sm'}

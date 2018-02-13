@@ -1,13 +1,11 @@
-%p#notice= notice
-%p
-  %strong Gender:
-  = @profile.gender
-%p
-  %strong Email address:
-  = @profile.email_address
-%p
-  %strong Gender:
-  = @profile.gender
-= link_to 'Edit', edit_profile_path(@profile)
-|
-= link_to 'Back', profiles_path
+.container
+  %p#notice= notice
+  %p
+    %strong Gender:
+    = @profile.gender
+  %p
+    %strong Email address:
+    = @profile.email_address
+
+  = link_to 'Edit', edit_profile_path(@profile), {class: 'btn btn-secondary btn-sm'}
+  = link_to 'Back', profiles_path, {class: 'btn btn-primary btn-sm'}

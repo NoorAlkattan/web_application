@@ -1,5 +1,5 @@
 .container
-  %h1 
+  %h1
     %span.badge.badge-default People
   %table#person.display{data: {source: people_url(format: 'json')}}
     %thead
@@ -8,4 +8,5 @@
         %th Date Of Birth
         %th Phone Number
     %tbody
-    	
+  %br/
+  = link_to 'New Person', new_person_path, {class: 'btn btn-danger'}

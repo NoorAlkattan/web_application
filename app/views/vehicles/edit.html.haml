@@ -1,5 +1,5 @@
-%h1 Editing Vehicle
-= render 'form', vehicle: @vehicle
-= link_to 'Show', @vehicle
-|
-= link_to 'Back', vehicles_path
+.container
+  %h3 Editing Vehicle
+  = render 'form', vehicle: @vehicle
+  = link_to 'Show', @vehicle, {class: 'btn btn-secondary btn-sm'}
+  = link_to 'Back', vehicles_path, {class: 'btn btn-primary btn-sm'}

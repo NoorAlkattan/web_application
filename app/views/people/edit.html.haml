@@ -1,5 +1,5 @@
-%h1 Editing Person
-= render 'form', person: @person
-= link_to 'Show', @person
-|
-= link_to 'Back', people_path
+.container
+  %h3 Editing Person
+  = render 'form', person: @person
+  = link_to 'Show', @person ,{class: 'btn btn-secondary btn-sm'}
+  = link_to 'Back',  people_path, {class: 'btn btn-primary btn-sm'}

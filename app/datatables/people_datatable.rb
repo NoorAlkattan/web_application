@@ -1,4 +1,5 @@
 class PeopleDatatable
+  include Rails.application.routes.url_helpers
   delegate :params, :link_to, :check_box_tag, :number_to_currency, to: :@view
   def initialize(view)
     @view = view
@@ -15,7 +16,7 @@ private
   def data
     people.map do |pl|
       [
-        pl.name,
+        "<a href='#{person_path(pl)}'>#{pl.name}</a>",
         pl.date_of_birth,
         pl.phone_number,
       ]

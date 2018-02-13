@@ -1,8 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$(document).on 'turbolinks:load', -> 
-	$('.toggle-status').on 'change', (e) -> 
+$(document).on 'turbolinks:load', ->
+	$('.toggle-status').on 'change', (e) ->
 		element = $(this)
 		data = $(this).data()
 		token = $('meta[name="csrf-token"]').attr('content')
@@ -16,8 +16,8 @@ $(document).on 'turbolinks:load', ->
 					element.html('Disabled')
 		e.preventDefault()
 
- 
-$(document).on 'turbolinks:load', -> 
+
+$(document).on 'turbolinks:load', ->
   	$('#person').dataTable
 	    sPaginationType: "full_numbers"
 	    bJQueryUI: true
@@ -25,3 +25,10 @@ $(document).on 'turbolinks:load', ->
 	    bServerSide: true
 	    responsive: true
 	    sAjaxSource: $('#person').data('source')
+
+window.setTimeout (->
+  $('.alert').fadeTo(500, 0).slideUp 500, ->
+    $(this).remove()
+    return
+  return
+), 3000

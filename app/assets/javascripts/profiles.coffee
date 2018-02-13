@@ -13,6 +13,10 @@ $(document).on 'turbolinks:load', (e) ->
       type: 'post',
       success: (data,textStatus,xhr) ->
         $('#notice').html(data.message)
- 
+        setTimeout(clearNotice, 2000)
     return
   return
+
+ clearNotice = ->
+   $('#notice').empty()
+   return

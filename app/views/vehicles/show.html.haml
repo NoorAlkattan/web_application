@@ -1,10 +1,10 @@
-%p#notice= notice
-%p
-  %strong Car type:
-  = @vehicle.car_type
-%p
-  %strong Color:
-  = @vehicle.color
-= link_to 'Edit', edit_vehicle_path(@vehicle)
-|
-= link_to 'Back', vehicles_path
+.container
+  %p#notice= notice
+  %p
+    %strong Car type:
+    = @vehicle.car_type
+  %p
+    %strong Color:
+    = @vehicle.color
+  = link_to 'Edit', edit_vehicle_path(@vehicle), {class: 'btn btn-secondary btn-sm'}
+  = link_to 'Back', vehicles_path, {class: 'btn btn-primary btn-sm'}
