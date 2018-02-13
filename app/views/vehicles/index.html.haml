@@ -15,8 +15,8 @@
         %tr
           %td= vehicle.car_type
           %td= vehicle.color
-          %td= vehs.name 
+          %td= vehs.name
           %td= link_to 'Show', vehicle, {class: 'btn btn-outline-info'}
           %td= link_to 'Edit', edit_vehicle_path(vehicle), {class: 'btn btn-outline-warning'}
   %br/
-  = link_to 'New Vehicle', new_vehicle_path, {class: 'btn btn-danger'}
+  = link_to 'New Vehicle', new_vehicle_path, {class: 'btn btn-info'}

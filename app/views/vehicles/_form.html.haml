@@ -7,7 +7,7 @@
           prohibited this vehicle from being saved:
         %ul
           - vehicle.errors.full_messages.each do |message|
-            %li= message
+            %li= message      
     .form-group
       = f.label :car_type
       = f.select :car_type, ['BMW', 'Ford', 'Ferari', 'Chevy', 'Honda', 'Toyota'], {}, id: :vehicle_car_type
