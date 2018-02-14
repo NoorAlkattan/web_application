@@ -1,21 +1,27 @@
 .container
-  = form_with(model: person, local: true) do |f|
-    - if person.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(person.errors.count, "error")
-          prohibited this person from being saved:
-        %ul
-          - person.errors.full_messages.each do |message|
-            %li= message
-    .form-group
-      = f.label :name
-      = f.text_field :name, class: 'form-control', placeholder: 'Name'
-    .form-group
-      = f.label :phone_number
-      = f.text_field :phone_number, class: 'form-control', placeholder: 'Phone Number'
-    .form-group
-      = f.label :date_of_birth
-      = f.text_field :date_of_birth, class: 'form-control', placeholder: 'yyyy-mm-dd'
-    .actions
-      = f.submit 'Submit', class: 'btn btn-secondary'
+  .card.card-outline-info
+    .raw
+      .col-8
+        .container-fluid
+          = form_with(model: person, local: true) do |f|
+            - if person.errors.any?
+              #error_explanation
+                %h2
+                  = pluralize(person.errors.count, "error")
+                  prohibited this person from being saved:
+                %ul
+                  - person.errors.full_messages.each do |message|
+                    %li= message
+            .form-group
+              = f.label :name
+              = f.text_field :name, class: 'form-control', placeholder: 'Name'
+            .form-group
+              = f.label :phone_number
+              = f.text_field :phone_number, class: 'form-control', placeholder: 'Phone Number'
+            .form-group
+              = f.label :date_of_birth
+              = f.text_field :date_of_birth, class: 'form-control', placeholder: 'yyyy-mm-dd'
+            .actions
+              = f.submit 'Submit', class: 'btn btn-secondary'
+              = link_to 'Back',  people_path, {class: 'btn btn-secondary'}
+      

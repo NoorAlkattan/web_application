@@ -1,22 +1,26 @@
 .container
-  = form_with(model: vehicle, local: true) do |f|
-    - if vehicle.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(vehicle.errors.count, "error")
-          prohibited this vehicle from being saved:
-        %ul
-          - vehicle.errors.full_messages.each do |message|
-            %li= message
-    .form-group
-      = f.label :car_type
-      = f.select :car_type, ['BMW', 'Ford', 'Ferari', 'Chevy', 'Honda', 'Toyota'], {}, id: :vehicle_car_type, class: "form-control", include_blank: true
-    .form-group
-      = f.label :color
-      = f.select :color, ['Red', 'Blue', 'Black', 'Yellow', 'Grey', 'Green', 'White'], {}, id: :vehicle_color, class: "form-control", include_blank: true
-    .form-group
-      = f.label :person_id
-      = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
-    .actions
-      = f.submit 'Submit', class: 'btn btn-secondary'
-      = link_to 'Back', vehicles_path, {class: 'btn btn-secondary'}
+  .card.card-outline-info
+    .raw
+      .col-8
+        .container-fluid
+          = form_with(model: vehicle, local: true) do |f|
+            - if vehicle.errors.any?
+              #error_explanation
+                %h2
+                  = pluralize(vehicle.errors.count, "error")
+                  prohibited this vehicle from being saved:
+                %ul
+                  - vehicle.errors.full_messages.each do |message|
+                    %li= message
+            .form-group
+              = f.label :car_type
+              = f.select :car_type, ['BMW', 'Ford', 'Ferari', 'Chevy', 'Honda', 'Toyota'], {}, id: :vehicle_car_type, class: "form-control", include_blank: true
+            .form-group
+              = f.label :color
+              = f.select :color, ['Red', 'Blue', 'Black', 'Yellow', 'Grey', 'Green', 'White'], {}, id: :vehicle_color, class: "form-control", include_blank: true
+            .form-group
+              = f.label :person_id
+              = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
+            .actions
+              = f.submit 'Submit', class: 'btn btn-secondary'
+              = link_to 'Back', vehicles_path, {class: 'btn btn-secondary'}

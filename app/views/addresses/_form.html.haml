@@ -1,25 +1,30 @@
 .container
-  = form_with(model: address, local: true) do |f|
-    - if address.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(address.errors.count, "error")
-          prohibited this address from being saved:
-        %ul
-          - address.errors.full_messages.each do |message|
-            %li= message
-    .form-group
-      = f.label :street
-      = f.text_field :street, class: 'form-control', placeholder: 'Street'
-    .form-group
-      = f.label :city
-      = f.text_field :city, class: 'form-control', placeholder: 'City'
-    .form-group
-      = f.label :zipcode
-      = f.text_field :zipcode, class: 'form-control', placeholder: 'Zipcode'
-    .form-group
-      = f.label :person_id
-      = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
-    .actions
-      = f.submit 'Submit', class: 'btn btn-secondary'
-      = link_to 'Back', addresses_path, {class: 'btn btn-secondary'}
+  .card.card-outline-info
+    .raw
+      .col-8
+        .container-fluid
+          = form_with(model: address, local: true) do |f|
+            - if address.errors.any?
+              #error_explanation
+                %h2
+                  = pluralize(address.errors.count, "error")
+                  prohibited this address from being saved:
+                %ul
+                  - address.errors.full_messages.each do |message|
+                    %li= message
+            .well
+              .form-group
+                = f.label :street
+                = f.text_field :street, class: 'form-control', placeholder: 'Street'
+              .form-group
+                = f.label :city
+                = f.text_field :city, class: 'form-control', placeholder: 'City'
+              .form-group
+                = f.label :zipcode
+                = f.text_field :zipcode, class: 'form-control', placeholder: 'Zipcode'
+              .form-group
+                = f.label :person_id
+                = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
+              .actions
+                = f.submit 'Submit', class: 'btn btn-secondary'
+                = link_to 'Back', addresses_path, {class: 'btn btn-secondary'}

@@ -1,25 +1,29 @@
 .container
-  = form_with(model: profile, local: true) do |f|
-    - if profile.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(profile.errors.count, "error")
-          prohibited this profile from being saved:
-        %ul
-          - profile.errors.full_messages.each do |message|
-            %li= message
-    .form-group
-      = f.label :email_address
-      = f.text_field :email_address, class: 'form-control', placeholder: 'Email Address'
-    .form-group
-      = f.label :age
-      = f.text_field :age, class: 'form-control', placeholder: 'Age'
-    .form-group
-      = f.label :gender
-      = f.text_field :gender, class: 'form-control', placeholder: 'Gender'
-    .form-group
-      = f.label :person_id
-      = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
-    .actions
-      = f.submit 'Submit', class: 'btn btn-secondary'
-      = link_to 'Back', profiles_path, {class: 'btn btn-secondary'}
+  .card.card-outline-info
+    .raw
+      .col-8
+        .container-fluid
+          = form_with(model: profile, local: true) do |f|
+            - if profile.errors.any?
+              #error_explanation
+                %h2
+                  = pluralize(profile.errors.count, "error")
+                  prohibited this profile from being saved:
+                %ul
+                  - profile.errors.full_messages.each do |message|
+                    %li= message
+            .form-group
+              = f.label :email_address
+              = f.text_field :email_address, class: 'form-control', placeholder: 'Email Address'
+            .form-group
+              = f.label :age
+              = f.text_field :age, class: 'form-control', placeholder: 'Age'
+            .form-group
+              = f.label :gender
+              = f.text_field :gender, class: 'form-control', placeholder: 'Gender'
+            .form-group
+              = f.label :person_id
+              = f.text_field :person_id, class: 'form-control', placeholder: 'Person'
+            .actions
+              = f.submit 'Submit', class: 'btn btn-secondary'
+              = link_to 'Back', profiles_path, {class: 'btn btn-secondary'}
