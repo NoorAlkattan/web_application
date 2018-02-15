@@ -1,6 +1,10 @@
 .container
   %h1
-    %span.badge.badge-default People
+  %button.btn.btn-danger{:type => "button"}
+    People
+    %span.badge.badge-pill.badge-default= @people.count
+  - 2.times do
+    %br
   %table#person.display{data: {source: people_url(format: 'json')}}
     %thead
       %tr

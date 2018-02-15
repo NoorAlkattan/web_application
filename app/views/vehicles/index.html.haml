@@ -1,8 +1,10 @@
 .container
   %p#notice= notice
   %h1
-    %span.badge.badge-danger Vehicle
-  %table.table.table.striped
+  %button.btn.btn-danger{:type => "button"}
+    Vehicle
+    %span.badge.badge-pill.badge-default= @vehicles.count
+  %table.table.table-striped
     %thead
       %tr
         %th Car type
@@ -16,8 +18,8 @@
           %td= vehicle.car_type
           %td= vehicle.color
           %td= vehs.name
-          %td= link_to 'Show', vehicle, {class: 'btn btn-outline-info'}
-          %td= link_to 'Edit', edit_vehicle_path(vehicle), {class: 'btn btn-outline-warning'}
+          %td= link_to 'Show', vehicle, {class: 'btn btn-outline-info btn-sm'}
+          %td= link_to 'Edit', edit_vehicle_path(vehicle), {class: 'btn btn-outline-warning btn-sm'}
   %br/
   = link_to 'New Vehicle', new_vehicle_path, {class: 'btn btn-info'}
   = link_to 'Back', people_path, {class: 'btn btn-secondary'}

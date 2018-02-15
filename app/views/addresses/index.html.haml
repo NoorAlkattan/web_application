@@ -1,7 +1,9 @@
 .container
   %p#notice= notice
   %h1
-    %span.badge.badge-warning Addresses
+  %button.btn.btn-danger{:type => "button"}
+    Addresses
+    %span.badge.badge-pill.badge-default= @addresses.count
   %table.table.table-striped
     %thead
       %tr
@@ -19,8 +21,8 @@
           %td= address.city
           %td= address.zipcode
           %td= pers.name
-          %td= link_to 'Show', address, {class: 'btn btn-outline-info'}
-          %td= link_to 'Edit', edit_address_path(address), {class: 'btn btn-outline-warning'}
+          %td= link_to 'Show', address, {class: 'btn btn-outline-info btn-sm'}
+          %td= link_to 'Edit', edit_address_path(address), {class: 'btn btn-outline-warning btn-sm'}
   %br/
   = link_to 'New Address', new_address_path, {class: 'btn btn-info'}
   = link_to 'Back', people_path, {class: 'btn btn-secondary'}
